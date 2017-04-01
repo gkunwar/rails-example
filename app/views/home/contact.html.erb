@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row header">
+    <h1>CONTACT US &nbsp;</h1>
+    <h3>Fill out the form below to learn more!</h3>
+  </div>
+  <div class="row body">
+
+    <%= form_tag({controller: "home", action: "search"}, method: "get", class: "nifty_form") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+      </br>
+      <h3>Check box</h3>
+      <%= check_box_tag(:pet_dog) %>
+      <%= label_tag(:pet_dog, "I own a dog") %>
+      <%= check_box_tag(:pet_cat) %>
+      <%= label_tag(:pet_cat, "I own a cat") %>
+
+      </br>
+      <h3>Radion button</h3>
+
+        <%= radio_button_tag(:age, "child") %>
+        <%= label_tag(:age_child, "I am younger than 21") %>
+        <%= radio_button_tag(:age, "adult") %>
+        <%= label_tag(:age_adult, "I'm over 21") %>
+
+    <% end %>
+  </div>
+</div>

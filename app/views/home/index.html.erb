@@ -1,0 +1,13 @@
+Hello <%= @name %></br>
+Number of events: <%= @event_count %>
+
+<%= render partial: "event_detail", locals: { event: @event, name: @name } %>
+
+<h2>Address</h2>
+<% address = 'lalitpur' %>
+<%= address %>
+
+<h2>Image</h2>
+<%= image_tag "image1.png" %>
+<h2>Link</h2>
+<%= link_to "Contact", '/contact' %>

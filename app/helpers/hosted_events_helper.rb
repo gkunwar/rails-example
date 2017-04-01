@@ -1,0 +1,2 @@
+module HostedEventsHelper
+end

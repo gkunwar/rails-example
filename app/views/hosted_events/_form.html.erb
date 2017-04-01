@@ -1,0 +1,53 @@
+<%= form_for(hosted_event) do |f| %>
+<%binding.pry%>
+  <% if hosted_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hosted_event.errors.count, "error") %> prohibited this hosted_event from being saved:</h2>
+
+      <ul>
+      <% hosted_event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_type %>
+    <%= f.select :event_type, ["Daily", "Weakly", "One Day"] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
+
+  <div class="field">
+    <%= f.label :host_name %>
+    <%= f.text_field :host_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

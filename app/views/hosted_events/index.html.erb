@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hosted Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Event type</th>
+      <th>Location</th>
+      <th>Published</th>
+      <th>Host name</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosted_events.each do |hosted_event| %>
+      <tr>
+        <td><%= hosted_event.title %></td>
+        <td><%= hosted_event.event_type %></td>
+        <td><%= hosted_event.location %></td>
+        <td><%= hosted_event.published %></td>
+        <td><%= hosted_event.host_name %></td>
+        <td><%= hosted_event.date %></td>
+        <td><%= hosted_event.description %></td>
+        <td><%= link_to 'Show', hosted_event %></td>
+        <td><%= link_to 'Edit', edit_hosted_event_path(hosted_event) %></td>
+        <td><%= link_to 'Destroy', hosted_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hosted Event', new_hosted_event_path %>
