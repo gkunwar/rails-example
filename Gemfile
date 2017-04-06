@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
 # Simple form for flexible as possible while helping you with powerful components to create your forms
 gem 'simple_form'
 

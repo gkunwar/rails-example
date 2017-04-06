@@ -10,71 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331040702) do
-
-  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
-    t.text     "detail",        limit: 65535
-    t.date     "pubished_date"
-    t.string   "written_by"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-  end
-
-  create_table "brokers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "b_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "business_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "location"
-    t.integer  "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "colleges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "location"
-    t.text     "description",  limit: 65535
-    t.string   "phone_number"
-    t.string   "website_url"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
+ActiveRecord::Schema.define(version: 20170402100133) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
+    t.string   "name"
+    t.string   "status"
+    t.datetime "evebt_date"
     t.text     "description", limit: 65535
     t.string   "location"
-    t.date     "date"
-    t.string   "event_type"
-    t.boolean  "publush"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "host_name"
-    t.string   "type"
+    t.integer  "location_id"
   end
 
-  create_table "hosted_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
-    t.string   "event_type"
-    t.string   "location"
-    t.boolean  "published"
-    t.string   "host_name"
-    t.date     "date"
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email"
-    t.string   "full_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "type"
+  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.float    "lat",        limit: 24
+    t.float    "lng",        limit: 24
+    t.integer  "capacity"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
 end
