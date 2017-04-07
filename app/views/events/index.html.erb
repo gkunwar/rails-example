@@ -1,0 +1,9 @@
+<%= paginate @events %>
+<h3>Upcoming Events</h3>
+<% @events.each do |event| %>
+  <ul>
+    <li>Name: <%= event.name %></li>
+    <li>Date: <%= event.evebt_date %> </li>
+    <li>Location: <%= event.location.name %></li>
+  </ul>
+<% end %>

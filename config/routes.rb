@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   get 'contact' => 'home#contact'
 
-  get 'search' => 'home#search'
-
   get 'event_contact' => 'home#event_contact'
 
   get 'events/:id/members/:member_id' => 'events#show', as: 'events_member'
@@ -17,6 +15,8 @@ Rails.application.routes.draw do
   resources :events do
     resources :member
   end
+
+  get 'search' => 'events#index', as: :search
 end
 
 
