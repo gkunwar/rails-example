@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   end
 
   get 'search' => 'events#index', as: :search
+
+  get 'dashboard' => 'home#dashboard'
+
+  put 'attain/:event_id' => 'events#attain', as: :attain
 end
 
 

@@ -1,0 +1,16 @@
+<section>
+  <div class="section-header">
+    <%= link_to "Add new event", new_event_path %>
+  </div>
+  <div class="section-body">
+    <h2>My Events</h2>
+    <% @my_events.each do |event| %>
+      <ul>
+        <li>Name: <%= event.name %></li>
+        <li>Date: <%= event.evebt_date %> </li>
+        <li>Location: <%= event.location.name %></li>
+      </ul>
+    <% end %>
+
+  </div>
+</section>

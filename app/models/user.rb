@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email
 
+  has_many :events, foreign_key: 'creator_id'
+  has_and_belongs_to_many :events
+
   private
   def send_welcome_email
     # UserMailer.welcome_email(self).deliver_now
